@@ -706,7 +706,6 @@ func MonitorAttestationsAndProposals(ctx context.Context, s *prysmgrpc.Service, 
 			if epoch <= justifiedEpoch-missedAttestationDistance {
 				epochsToGarbage = append(epochsToGarbage, epoch)
 			}
-
 			for index, attStatus := range validators {
 				if _, ok := reversedIndexes[index]; !ok {
 					continue
@@ -752,7 +751,6 @@ func MonitorAttestationsAndProposals(ctx context.Context, s *prysmgrpc.Service, 
 				}
 			}
 		}
-
 		for slot, index := range proposals {
 			slotBlocks, ok := blocks[slot]
 			if !ok {
